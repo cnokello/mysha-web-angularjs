@@ -1,0 +1,88 @@
+<div class="col-md-4 col-sm-5">
+         <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Find insurance company</u>
+              </h4>
+
+              <div class="portlet-body">
+
+                <!-- Filter insurance companies -->
+                <form id="searchDoctors" action="#/searchInsuranceCompany" class="form parsley-form">
+                <div class="form-group">
+                  <label for="hospitalName">Name</label>
+                  <input type="text" id="companyName" name="hospitalName" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <label for="hospital">Hospital or clinic coverage</label>
+                  <select id="hospital" name="hospital" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select location</option>
+                    <option value="The Nairobi Hospital">The Nairobi Hospital</option>
+                    <option value="Makini Herbal Clinic">Makini Herbal Clinic</option>
+                    <option value="Meridian Clinic">Meridian Clinic</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <label for="doctor">Doctors coverage</label>
+                  <select id="doctor" name="doctor" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select doctor</option>
+                    <option value="Dr. Adrian Mutut">Dr. Adrian Mutu</option>
+                    <option value="Dr. Janet Mukuya">Dr. Janet Mukuya</option>
+                    <option value="Dr. Odhiambo Onyango">Dr. Odhiambo Onyango</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <button type="submit" class="btn btn-danger">Search</button>
+                </div> <!-- /.form-group -->
+
+                </form>
+
+                <hr>
+
+                </div> <!-- /.portlet-body -->
+
+        </div> <!-- /.portlet -->
+
+</div> <!-- /.col -->
+
+
+<div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Health Insurance Companies</u>
+              </h4>
+
+              <div class="portlet-body">
+
+        <!-- Test -->
+        <div ng-repeat="insuranceCompany in insuranceCompaniesList" class="media">
+        <a href="#/insuranceCompanies/{{insuranceCompany.id}}" class="pull-left">
+        <img src="./img/avatars/insurance.png" class="media-object" alt="Sample Image">
+        </a>
+
+	<div class="media-body">
+                <h4 class="media-heading"><a href="#/insuranceCompanies/{{insuranceCompany.id}}">{{insuranceCompany.name}} </a><small><i>{{insuranceCompany.location}}</i></small></h4>
+        	<p>{{insuranceCompany.description}}</p>
+          <div class="thumbnail-footer">
+                    <div class="pull-left">
+                      <a href="javascript:;"><i class="fa fa-map-marker">&nbsp; View on map</i></a>
+                      <a href="javascript:;"><i class="fa fa-info-circle">&nbsp; Request info</i></a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-up"></i> 123</a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-down"></i> 29</a>
+                    </div>
+                  </div>
+
+        </div>
+        </div>
+        <!-- /Test -->
+
+                <!-- <div id="line-chart" class="chart-holder-300"></div> -->
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->

@@ -1,0 +1,82 @@
+<div class="col-md-4 col-sm-5">
+         <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Find a clinic or hospital</u>
+              </h4>
+
+              <div class="portlet-body">
+
+                <!-- Filter nurses -->
+                <form id="searchDoctors" action="#/searchHospital" class="form parsley-form">
+                <div class="form-group">
+                  <label for="hospitalName">Name</label>
+                  <input type="text" id="hospitalName" name="hospitalName" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <label for="hospitalLocation">Location</label>
+                  <select id="hospitalLocation" name="hospitalLocation" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select location</option>
+                    <option value="NAIROBI">Nairobi</option>
+                    <option value="KIAMBU">Kiambu</option>
+                    <option value="THIKA">Thika</option>
+                    <option value="GARISSA">Garissa</option>
+                    <option value="MACHAKOS">Machakos</option>
+                    <option value="NAIVASHA">Naivasha</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <button type="submit" class="btn btn-danger">Search</button>
+                </div> <!-- /.form-group -->
+
+                </form>
+
+                <hr>
+
+                </div> <!-- /.portlet-body -->
+
+        </div> <!-- /.portlet -->
+
+</div> <!-- /.col -->
+
+
+
+<!-- Hospitals and clinics -->
+<div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Hospitals and clinics</u>
+              </h4>
+
+              <div class="portlet-body">
+
+        <!-- Test -->
+        <div ng-repeat="hospital in hospitalsList" class="media">
+        <a href="#/hospitals/{{hospital.id}}" class="pull-left">
+        <img src="./img/avatars/hospital.png" class="media-object" alt="Sample Image">
+        </a>
+
+        <div class="media-body">
+                <h4 class="media-heading"><a href="#/hospitals/{{hospital.id}}">{{hospital.name}} </a><small><i>{{hospital.location}}</i></small></h4>
+        	<p>{{hospital.description}}</p>
+          <div class="thumbnail-footer">
+                    <div class="pull-left">
+                      <a href="javascript:;"><i class="fa fa-map-marker">&nbsp; View on map</i></a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-up"></i> 123</a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-down"></i> 29</a>
+                    </div>
+                  </div>
+
+        </div>
+        </div>
+        	<!-- /Test -->
+
+                <!-- <div id="line-chart" class="chart-holder-300"></div> -->
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->

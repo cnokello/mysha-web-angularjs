@@ -1,0 +1,76 @@
+<!-- Diseases options -->
+<div class="col-md-4 col-sm-5">
+         <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Search</u>
+              </h4>
+
+              <div class="portlet-body">
+
+                <!-- Filter doctors -->
+                <form id="searchDiseases" action="#/searchDiseases" class="form parsley-form">
+                <div class="form-group">
+                  <label for="diseaseName">Disease Name</label>
+                  <input type="text" id="diseaseName" name="diseaseName" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <label for="diseaseSymptom">Symptom</label>
+                  <input type="text" id="diseaseSymptom" name="diseaseSymptom" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-danger">Search</button>
+                </div> <!-- /.form-group -->
+
+                </form>
+
+                <hr>
+		</div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->
+
+<!-- /Diseases options -->
+
+
+
+<!-- Diseases -->
+<div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Diseases</u>
+              </h4>
+
+              <div class="portlet-body">
+
+        <!-- Test -->
+        <div ng-repeat="disease in diseasesList" class="media">
+        <a href="#/diseases/{{disease.id}}" class="pull-left">
+        <img src="./img/avatars/drug.png" class="media-object" alt="Sample Image">
+        </a>
+
+	<div class="media-body">
+                <h4 class="media-heading"><a href="#/diseases/{{disease.id}}">{{disease.name}} </a><small><i>{{disease.category}}</i></small></h4>
+        	<p>{{disease.description}}</p>
+          <div class="thumbnail-footer">
+                    <div class="pull-left">
+                      <a href="javascript:;"><i class="fa fa-info-circle">&nbsp; Symptoms</i></a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-up"></i> 123</a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-down"></i> 29</a>
+                    </div>
+                  </div>
+
+        </div>
+        </div>
+        <!-- /Test -->
+
+                <!-- <div id="line-chart" class="chart-holder-300"></div> -->
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->

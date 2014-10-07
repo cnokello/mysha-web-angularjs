@@ -1,0 +1,94 @@
+<!-- Nurses options -->
+<div class="col-md-4 col-sm-5">
+         <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Find a nurse</u>
+              </h4>
+
+              <div class="portlet-body">
+
+                <!-- Filter nurses -->
+                <form id="searchDoctors" action="#/searchNurses" class="form parsley-form">
+                <div class="form-group">
+                  <label for="doctorName">Name</label>
+                  <input type="text" id="doctorName" name="doctorName" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <label for="doctorLocation">Location</label>
+                  <select id="doctorLocation" name="doctorLocation" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select location</option>
+                    <option value="NAIROBI">Nairobi</option>
+                    <option value="KIAMBU">Kiambu</option>
+                    <option value="THIKA">Thika</option>
+                    <option value="GARISSA">Garissa</option>
+                    <option value="MACHAKOS">Machakos</option>
+                    <option value="NAIVASHA">Naivasha</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <label for="doctorInstituion">Hospital or clinic</label>
+                  <select id="doctorInstitution" name="doctorInstitution" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select hospital or clinic</option>
+                    <option value="AGA KHAN NAIROBI">Aga Khan Hospital (Nairobi)</option>
+                    <option value="NAIROBI HOSPITAL">Nairobi Hospital</option>
+                    <option value="KIJABE EYE HOSPITAL">Kijabe Eye Hospital</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-danger">Search</button>
+                </div> <!-- /.form-group -->
+
+                </form>
+
+		<hr>
+
+                </div> <!-- /.portlet-body -->
+
+	</div> <!-- /.portlet -->
+
+</div> <!-- /.col -->
+
+<!-- /Nurses options -->
+		
+<!-- Nurses -->
+<div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Nurses</u>
+              </h4>
+
+              <div class="portlet-body">
+
+        <!-- Test -->
+        <div ng-repeat="nurse in nursesList" class="media">
+        <a href="#/profile/{{nurse.id}}" class="pull-left">
+        <img src="./img/avatars/nurse.png" class="media-object" alt="Sample Image">
+        </a>
+
+	<div class="media-body">
+                <h4 class="media-heading"><a href="#/profile/{{nurse.id}}">{{nurse.fullName}} </a><small><i>{{nurse.location}}</i></small></h4>
+        <p>{{nurse.description}}</p>
+          <div class="thumbnail-footer">
+                    <div class="pull-left">
+                      <a href="javascript:;"><i class="fa fa-check-square">&nbsp; Hire</i></a>
+		      <a href="javascript:;"><i class="fa fa-info-circle">&nbsp; Request info</i></a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-up"></i> 123</a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-down"></i> 29</a>
+                    </div>
+                  </div>
+
+        </div>
+        </div>
+        <!-- /Test -->
+
+                <!-- <div id="line-chart" class="chart-holder-300"></div> -->
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->

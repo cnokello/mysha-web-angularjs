@@ -1,0 +1,78 @@
+<div class="col-md-4 col-sm-5">
+         <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Find institutions with coverage</u>
+              </h4>
+
+              <div class="portlet-body">
+
+                <!-- Filter covered institutions -->
+                <form id="searchDoctors" action="#/searchInsuredInstitutions" class="form parsley-form">
+                <div class="form-group">
+                  <label for="hospitalName">Name</label>
+                  <input type="text" id="hospitalName" name="hospitalName" class="form-control parsley-validated" data-required="true">
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+                  <label for="hospitalLocation">Medical cover provided by</label>
+                  <select id="hospitalLocation" name="hospitalLocation" class="form-control parsley-validated" data-required="true">
+                    <option value="">Select insurance company</option>
+                    <option value="APA Insurance">APA Insurance</option>
+                    <option value="Resolution Health">Resolution Health</option>
+                    <option value="UAP Insurance">UAP Insurance</option>
+                    <option value="Jubilee Insurance">Jubilee Insurance</option>
+                  </select>
+                </div> <!-- /.form-group -->
+
+		<div class="form-group">
+                  <button type="submit" class="btn btn-danger">Search</button>
+                </div> <!-- /.form-group -->
+
+                </form>
+
+                <hr>
+
+                </div> <!-- /.portlet-body -->
+
+        </div> <!-- /.portlet -->
+
+</div> <!-- /.col -->
+
+
+<div class="col-md-8 col-sm-7">
+            <div class="portlet">
+
+              <h4 class="portlet-title">
+                <u>Institutions covered by medical insurance</u>
+              </h4>
+
+              <div class="portlet-body">
+
+        <!-- Test -->
+        <div ng-repeat="hospital in insuranceCoverageHospitalsList" class="media">
+        <a href="#/institutionProviders/{{hospital.id}}" class="pull-left">
+        <img src="./img/avatars/hospital.png" class="media-object" alt="Sample Image">
+        </a>
+
+	<div class="media-body">
+                <h4 class="media-heading"><a href="#/institutionProviders/{{hospital.id}}">{{hospital.hospitalName}} </a><small><i>{{hospital.location}}</i></small></h4>
+        	<p>{{hospital.description}}</p>
+          <div class="thumbnail-footer">
+                    <div class="pull-left">
+                      <a href="javascript:;"><i class="fa fa-map-marker">&nbsp; View on map</i></a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-up"></i> 123</a>
+                      <a href="javascript:;"><i class="fa fa-thumbs-down"></i> 29</a>
+                    </div>
+                  </div>
+
+        </div>
+        </div>
+        <!-- /Test -->
+
+                <!-- <div id="line-chart" class="chart-holder-300"></div> -->
+              </div> <!-- /.portlet-body -->
+
+            </div> <!-- /.portlet -->
+
+          </div> <!-- /.col -->
